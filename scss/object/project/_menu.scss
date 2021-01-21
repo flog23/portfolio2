@@ -1,0 +1,33 @@
+@import "foundation/variable.scss";
+.p-menu {
+  margin-top: 120px;
+  padding: 0 200px;
+  @include mq("sp") {
+    margin-top: 90px;
+    padding: 0px;
+  }
+  @include title;
+  div {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    @include mq("sp") {
+      display: block;
+    }
+    div {
+      width: 40%;
+      font-family: "Noto Serif JP", serif;
+      padding: 20px;
+      margin-right: 20px;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: gray 1px solid;
+      @include mq("sp") {
+        width: 100%;
+        padding: 10px;
+        margin-right: 0;
+      }
+    }
+  }
+}

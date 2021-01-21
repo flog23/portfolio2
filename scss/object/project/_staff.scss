@@ -1,0 +1,31 @@
+@import "foundation/variable.scss";
+.p-staff {
+  margin-top: 120px;
+  @include mq("sp") {
+    margin-top: 90px;
+  }
+  @include title;
+  &__employee {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    @include mq("sp") {
+      display: block;
+    }
+    margin-top: 60px;
+  }
+  &__personal {
+    width: 28%;
+      background-color: beige;
+      padding: 30px 0;
+      margin-top: 20px;
+      margin-bottom: 50px;
+      @include mq("sp") {
+        width: 100%;
+      }
+      p {
+        font-family: "Noto Serif JP", serif;
+        margin-top: 5px;
+      }
+  }
+}

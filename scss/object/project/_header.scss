@@ -1,0 +1,26 @@
+.p-header {
+  background-color: bisque;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 150px;
+  @include mq("sp") {
+    padding: 10px;
+  }
+  &__logo {
+    a {
+      font-family: "Raleway", sans-serif;
+      font-size: 20px;
+      @include mq("sp") {
+        font-size: 14px;
+      }
+    }
+  }
+  &__bg {
+    background-image: url("https://flog23.github.io/portfolio2/dist/img/top2.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - 68px);
+  }
+}

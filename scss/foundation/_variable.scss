@@ -1,0 +1,80 @@
+// レイアウト幅
+$layout-width-inner: 1200px;
+
+// ブレークポイント
+$breakpoints: (
+  "sp": "screen and (max-width: 767px)",
+  "tab": "screen and (max-width: #{$layout-width-inner - 1px})",
+  "pc": "screen and (min-width: #{$layout-width-inner})",
+);
+
+// メディアクエリー
+@mixin mq($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin title {
+  text-align: center;
+  &__title {
+    font-size: 26px;
+    @include mq("sp") {
+      font-size: 24px;
+    }
+    font-family: "Raleway", sans-serif;
+    position: relative;
+    display: inline-block;
+    padding: 0 55px;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      display: inline-block;
+      width: 45px;
+      height: 1px;
+      background-color: black;
+    }
+    &::before {
+      left: 0;
+    }
+    &::after {
+      right: 0;
+    }
+  }
+}
+
+// フェードイン
+@mixin js-fadein {
+  .js-fadein {
+    opacity: 0;
+    transform: translate(0, 50px);
+    transition: all 1500ms;
+    &.scrollin {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+}
+// 左右
+@mixin js-fadein__side {
+  .sect02 {
+    overflow: hidden;
+  } /*横スクロールバーを隠す*/
+  .slide-right {
+    transform: translateX(200px);
+  }
+  .slide-left {
+    transform: translateX(-200px);
+  }
+}
+// 上下
+@mixin js-fadein__vertical {
+  .updown {
+    transform: translateY(-100px);
+  }
+  .downup {
+    transform: translateY(100px);
+  }
+}
